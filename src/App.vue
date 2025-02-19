@@ -88,15 +88,6 @@ export default {
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-#app {
-  font-family: "Roboto", serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #570082;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -110,8 +101,12 @@ h1 {
 .navbar {
   background: #cca9db;
   color: #570082;
-  padding: 20px 0;
-  position: relative;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top:0 ;
+  left: 0;
+  z-index: 1000;
 }
 
 .container {
@@ -120,17 +115,9 @@ h1 {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
-.container2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 .nav-links {
   list-style: none;
@@ -207,31 +194,28 @@ h1 {
 .footer {
   background-color: #a15b9d; /* Color de fondo oscuro */
   color: #fff; /* Color del texto */
-  padding: 40px 0;
+  padding: 3rem;
+  margin-top: auto;
   font-family: "Roboto", serif;
-
 }
 
 .container1 {
-  width: 90%;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap; /* Permite que las secciones se ajusten en pantallas pequeñas */
-  gap: 20px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
 }
 
 /* Estilos para cada sección del footer */
 .footer-section {
-  flex: 1; /* Cada sección ocupa el mismo espacio */
-  min-width: 200px; /* Ancho mínimo para evitar que se compriman demasiado */
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .footer-section h3 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
   color: #570082; /* Color del título */
 }
 
@@ -239,6 +223,19 @@ h1 {
   font-size: 0.9em;
   line-height: 1.6;
   color: #fff; /* Color del texto secundario */
+}
+
+/* Estilos para el pie de página inferior */
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  background-color: #cca9db; /* Color de fondo más oscuro */
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  font-size: 0.9em;
+  color: #570082; /* Color del texto secundario */
 }
 
 /* Estilos para la lista de Quick Links */
@@ -272,20 +269,6 @@ h1 {
   margin-bottom: 10px;
   font-size: 0.9em;
   color: #fff; /* Color del texto secundario */
-}
-
-/* Estilos para el pie de página inferior */
-.footer-bottom {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #cca9db; /* Color de fondo más oscuro */
-  margin-top: 40px;
-}
-
-.footer-bottom p {
-  margin: 0;
-  font-size: 0.9em;
-  color: #570082; /* Color del texto secundario */
 }
 
 /* Media Queries para responsividad */
